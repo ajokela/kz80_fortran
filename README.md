@@ -230,4 +230,4 @@ END
 
 ## License
 
-Part of the RetroShield Arduino project.
+BSD 3-Clause License. See [LICENSE](LICENSE) for details.
