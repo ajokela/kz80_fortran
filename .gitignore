@@ -1,0 +1,23 @@
+# Build artifacts
+bin/
+obj/
+
+# Test binaries
+tests/c/test_bcd
+tests/c/test_lexer
+tests/c/test_symtab
+tests/c/test_parser
+tests/c/test_program
+tests/c/*.dSYM/
+tests/c/*.profraw
+tests/c/*.profdata
+tests/c/coverage_html/
+
+# Editor/IDE
+.vscode/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
