@@ -77,16 +77,16 @@ typedef struct {
  * Memory layout constants
  *
  * Layout:
- *   0x0100-0x4FFF  Code (~20KB)
- *   0x5000-0x5BFF  C globals/DATA section (~3KB) - managed by linker
- *   0x6000-0x6BFF  Program text storage (~3KB)
- *   0x7000-0x77FF  Variable storage (~2KB)
+ *   0x0100-0x54FF  Code + GSINIT (~21KB)
+ *   0x5500-0x66FF  C globals/DATA section (~4.5KB) - managed by linker
+ *   0x6700-0x71FF  Program text storage (~2.8KB)
+ *   0x7200-0x7DFF  Variable storage (~3KB)
  *   0x8000         Stack (grows down)
  *============================================================================*/
-#define MEM_PROGRAM     0x6000  /* Program text storage */
-#define MEM_PROG_SIZE   0x0C00  /* 3KB for program */
-#define MEM_VARS        0x7000  /* Variable storage */
-#define MEM_VARS_SIZE   0x0800  /* 2KB for variables */
+#define MEM_PROGRAM     0x6700  /* Program text storage */
+#define MEM_PROG_SIZE   0x0B00  /* 2.8KB for program */
+#define MEM_VARS        0x7200  /* Variable storage */
+#define MEM_VARS_SIZE   0x0C00  /* 3KB for variables */
 
 /*============================================================================
  * Limits

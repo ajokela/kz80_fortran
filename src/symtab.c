@@ -49,6 +49,11 @@ void sym_init(void) {
     /* Clear only symbol entries, not labels */
     symtab.num_symbols = 0;
     symtab.next_addr = 0;
+
+    /* Note: We don't clear variable storage here because it's
+     * re-initialized as variables are declared during program execution.
+     * The BCD print function now validates digit values to handle
+     * any uninitialized memory gracefully. */
 }
 
 symbol_t *sym_lookup(const char *name) {

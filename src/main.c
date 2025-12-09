@@ -15,7 +15,7 @@
 #include "parser.h"
 #include "program.h"
 
-#define VERSION "0.2"
+#define VERSION "0.3"
 
 /* Input buffer */
 #define INPUT_BUF_SIZE 80

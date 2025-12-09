@@ -20,9 +20,9 @@ TARGET = fortran77
 
 # Compiler flags
 CFLAGS = -mz80 --std-c11 --opt-code-size -I$(INCDIR)
-# Data location must be after code ends (code ~17KB, ends around 0x4400)
-# Using 0x5000 to give code room to grow
-LDFLAGS = -mz80 --no-std-crt0 --code-loc 0x0100 --data-loc 0x5000
+# Data location must be after code ends (code ~21KB, ends around 0x54CC)
+# Using 0x5500 to give code room to grow
+LDFLAGS = -mz80 --no-std-crt0 --code-loc 0x0100 --data-loc 0x5500
 
 # Source files
 C_SOURCES = $(wildcard $(SRCDIR)/*.c)

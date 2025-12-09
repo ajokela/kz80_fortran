@@ -680,10 +680,13 @@ void bcd_print(const bcd_t *a) {
     int8_t exp = (int8_t)(a->exp - BCD_EXP_BIAS);
 
     /* Always use scientific notation for simplicity */
-    acia_putc('0' + bcd_get_digit(a, 0));
+    /* Validate BCD digits - must be 0-9, clamp invalid values */
+    uint8_t d = bcd_get_digit(a, 0);
+    acia_putc('0' + (d > 9 ? 0 : d));
     acia_putc('.');
     for (uint8_t i = 1; i < 6; i++) {
-        acia_putc('0' + bcd_get_digit(a, i));
+        d = bcd_get_digit(a, i);
+        acia_putc('0' + (d > 9 ? 0 : d));
     }
     acia_putc('E');
     int8_t e = exp - 1;
